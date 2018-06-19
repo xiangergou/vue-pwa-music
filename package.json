@@ -13,10 +13,13 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "better-scroll": "^1.12.1",
     "postcss-px2rem": "^0.3.0",
     "vant": "^1.1.8",
     "vant-css": "^1.0.1",
     "vue": "^2.5.16",
+    "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.0"
   },
   "devDependencies": {

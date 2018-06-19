@@ -17,10 +17,6 @@ export default {
 </script>
 
 <style>
-body {
-  background-color: #f8f8f8;
-
-}
 h2{
   width: 90px;
   font-size: 14Px;

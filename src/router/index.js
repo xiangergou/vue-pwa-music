@@ -1,52 +1,40 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-// import HelloWorld from '@/components/HelloWorld';
-import main from '@/views/main';
 
-Vue.use(Router);
+const root = {
+  path: '/',
+  redirect: '/main'
+}
 
-export default new Router({
-  routes: [
-    // {
-    //   path: '/imgUpload',
-    //   name: 'HelloWorld',
-    //   component: HelloWorld
-    // },
+  const routes = [
+    root,
     {
-      path: '/',
+      path: '/main',
       name: 'main',
-      component: main
+      component: resolve => { require(['../views/main'], resolve); }
+    },
+    {
+      path: '/rank',
+      name: 'rank',
+      component: resolve => { require(['../views/components/rank'], resolve); }
+    },
+    {
+      path: '/recommend',
+      name: 'recommend',
+      component: resolve => { require(['../views/components/recommend'], resolve); }
+    },
+    {
+      path: '/songDetail',
+      name: 'songDetail',
+      component: resolve => { require(['../views/components/songDetail'], resolve); }
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: resolve => { require(['../views/components/search'], resolve); }
+    },
+    {
+      path: '/singer',
+      name: 'singer',
+      component: resolve => { require(['../views/components/singer'], resolve); }
     }
   ]
-});
-// 'use strict';
-
-// const root = {
-//   path: '/',
-//   redirect: '../views/main'
-// };
-
-// const main = {
-//   path: '/main',
-//   name: 'main',
-//   component: resolve => { require(['../views/main'], resolve); }
-// };
-
-// const detail = {
-//   path: '/detail',
-//   name: 'detail',
-//   component: resolve => { require(['../views/detail'], resolve); }
-// };
-
-// const routes = [
-//   root,
-//   main,
-//   detail
-//   // require('./main'),
-//   // {
-//   //   path: '*',
-//   //   redirect: '/start'
-//   // }
-// ];
-
-// module.exports = routes;
+module.exports = routes
