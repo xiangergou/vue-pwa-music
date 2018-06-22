@@ -18,7 +18,7 @@
           v-else-if="index == 2"
           ></rank>
           <singer
-            v-else
+            v-else-if="index == 3"
             >
           </singer>
         </van-tab>
@@ -64,7 +64,6 @@ export default {
     })
     // 推荐歌曲
     getRecommendSongList().then(res => {
-      console.log(res.data.result)
       self.songList = res.data.result
     })
   }
@@ -78,6 +77,7 @@ export default {
   width: 100%;
 }
 .van-tab{
+
 }
 .logo-nav{
   background: #d43c33;
@@ -88,6 +88,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 99999;;
 }
 .logo-nav .topsvg{
   width: 142Px;

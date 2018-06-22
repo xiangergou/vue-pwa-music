@@ -1,12 +1,12 @@
 import fetch from '@/utils/fetch';
 
 // 获取歌手列表
-export function getSinger(id) {
+export function getSingers(limit) {
   return fetch({
-    url: '/top/list',
+    url: '/top/artists',
     method: 'GET',
     params: {
-      idx: id
+      limit: limit
     }
   });
 }
